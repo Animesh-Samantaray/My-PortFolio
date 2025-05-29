@@ -4,7 +4,9 @@ import About from './About.jsx'
 import Skills from './Skills.jsx'
 import Exp from './Exp.jsx'
 import Project from './Project.jsx'
+import { useNavigate } from 'react-router-dom'
 const Hero = () => {
+  const navigate = useNavigate();
   return (
     <section className="bg-[#0F172A] text-[#F1F5F9] py-16 px-6 md:px-20 lg:px-32">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12 md:flex-row-reverse">
@@ -24,13 +26,14 @@ const Hero = () => {
             Hi, I'm Animesh <span className="inline-block">🚀</span>
           </h1>
           <p className="text-xl md:text-3xl text-[#CBD5E1] font-semibold tracking-wide">
-            React Frontend Developer • Java DSA Geek • Exploring AI/ML
+            React Frontend Developer • Java DSA  • Exploring AI/ML
           </p>
           <p className="text-md md:text-lg text-[#94A3B8] max-w-md leading-relaxed mx-auto md:mx-0">
             I build scalable and responsive web apps with React & Tailwind. Passionate about solving complex problems using Java and diving deep into AI/ML technology.
           </p>
           <div className="flex flex-wrap justify-center md:justify-start gap-6 mt-6">
-            <button className="bg-[#7C3AED] text-white px-8 py-3 rounded-lg font-semibold hover:bg-purple-700 transition-all shadow-lg">
+            <button className="bg-[#7C3AED] text-white px-8 py-3 rounded-lg font-semibold hover:bg-purple-700 transition-all shadow-lg"
+            onClick={()=>{navigate('/projects')}}>
               View Projects
             </button>
             <button

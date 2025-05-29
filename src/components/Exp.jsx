@@ -1,7 +1,10 @@
 import React, { useState } from "react";
-import skillPic from './3SKill.png';
-import cttcPic from './cttc.jpg';
+import skill from './3SKill.png';
+import cttc from './cttc.jpg';
+import ViewPic from "./ViewPic";
+import { useNavigate } from "react-router-dom";
 const Exp = () => {
+    const navigate = useNavigate();
     const experiences = [
         {
             title: "AI/ML Intern",
@@ -23,7 +26,7 @@ const Exp = () => {
                 "Practiced version control and collaboration workflows using Git and GitHub.",
                 "Focused on pixel-perfect design, responsiveness, and code reusability.",
             ],
-            pic: skillPic,
+            pic: skill,
         },
         {
             title: "Java Developer Intern",
@@ -34,19 +37,18 @@ const Exp = () => {
                 "Developed small-scale applications and practiced modular code architecture.",
                 "Improved problem-solving skills and understanding of real-world Java application flow.",
             ],
-            pic: cttcPic,
+            pic: cttc,
 
         },
     ];
     const [SelectedPic, setSelectedPic] = useState(null);
     const handleSelectedPic = (pic) => {
-        if (!pic) {
-            // alert(' Oops ! Certificate is not available yet....');
-            return;
-        }
-        else {
-            setSelectedPic(pic);
-        }
+       if(!pic){
+        alert("not available");
+        return;
+       }
+       navigate('/view', { state: { pic } });
+
     }
     return (
         <div>
@@ -80,17 +82,7 @@ const Exp = () => {
                     </div>
                 </div>
 
-                <div className="mt-10 flex justify-center">
-                    {SelectedPic ? (
-                        <img
-                            src={SelectedPic}
-                            alt="Certificate"
-                            className="max-w-md rounded-lg shadow-lg border-4 border-[#8B5CF6]"
-                        />
-                    ) : (
-                        <p className="text-center text-[#94A3B8] italic">Select a certificate to view it here.</p>
-                    )}
-                </div>
+               
 
             </section>
         </div>

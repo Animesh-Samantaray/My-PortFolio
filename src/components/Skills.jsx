@@ -115,26 +115,35 @@ const Skills = () => {
                 className={`
                   bg-[#1E293B]
                   p-3 sm:p-4
-                  rounded-lg border
+                  rounded-lg border-2
                   flex flex-col items-center
-                  transition-shadow duration-300 hover:shadow-2xl
+                  transition-border transition-transform duration-300
+                  hover:shadow-[0_0_48px_24px_${palette.circle},0_0_32px_16px_${palette.circle}]
+                  hover:border-[${palette.circle}]
+                  hover:scale-105
                   ${palette.card}
-                  aspect-square w-full max-w-[140px] sm:max-w-[170px] mx-auto
-                  min-h-[140px] max-h-[170px]
+                  aspect-square w-full
+                  max-w-[140px] min-h-[140px] max-h-[170px]
+                  sm:max-w-[170px] sm:min-h-[170px] sm:max-h-[200px]
+                  md:max-w-[220px] md:min-h-[220px] md:max-h-[260px]
+                  lg:max-w-[260px] lg:min-h-[260px] lg:max-h-[320px]
+                  mx-auto
                   overflow-hidden
                 `}
               >
                 {/* Icon and Circular Progress */}
                 <div className="flex flex-col items-center gap-2 flex-shrink-0 mb-1">
-                  <Icon size={26} color={palette.circle} style={{ filter: `drop-shadow(0 0 6px ${palette.circle})` }} />
+                  <Icon size={26} color={palette.circle} style={{ filter: `drop-shadow(0 0 8px ${palette.circle})` }} />
                   <CircleProgress percentage={level} color={palette.circle} size={40} strokeWidth={5} />
                 </div>
                 {/* Text Content */}
-                <div className="flex-grow flex flex-col items-center justify-center text-center w-full">
-                  <h2 className="text-sm sm:text-base font-semibold mb-0.5 flex items-center gap-1 justify-center w-full truncate">
-                    {name}
+                <div className="flex-grow flex flex-col items-center justify-center text-center w-full px-1 overflow-hidden">
+                  <h2 className="text-sm sm:text-base font-semibold mb-0.5 flex items-center gap-1 justify-center w-full overflow-hidden">
+                    <span className="block w-full max-w-full overflow-hidden text-ellipsis whitespace-nowrap text-left">
+                      {name}
+                    </span>
                   </h2>
-                  <p className="text-[11px] sm:text-sm text-[#94A3B8] w-full overflow-hidden text-ellipsis whitespace-nowrap">
+                  <p className="text-[11px] sm:text-sm text-[#94A3B8] w-full overflow-hidden text-ellipsis whitespace-nowrap text-left">
                     {desc}
                   </p>
                 </div>
