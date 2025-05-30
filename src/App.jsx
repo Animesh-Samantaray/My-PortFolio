@@ -7,6 +7,8 @@ import Skills from './components/Skills'
 import Exp from './components/Exp'
 import Project from './components/Project'
 import ViewPic from './components/ViewPic'
+import Contact from './components/Contact'
+import Footer from './components/Footer'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -15,6 +17,7 @@ function App() {
   return (
     <Router>
       <Navbar></Navbar>
+      
       <Routes>
         <Route path='/' element={<Hero />}/>
         <Route path='/about' element={<About />}/>
@@ -22,7 +25,9 @@ function App() {
         <Route path='/experience' element={<Exp />}/>
         <Route path='/projects' element={<Project />}/>
         <Route path='/view' element={<ViewPic />} />
+        <Route path='/contact' element = {<Contact />} />
       </Routes>
+      <Footer></Footer>
     </Router>
 
   )
