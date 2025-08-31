@@ -2,21 +2,24 @@ import React, { useState } from "react";
 import skill from './3SKill.png';
 import cttc from './cttc.jpg';
 import ViewPic from "./ViewPic";
+import aimlcttc from './aimlcttc.jpg'
 import { useNavigate } from "react-router-dom";
 const Exp = () => {
     const navigate = useNavigate();
     const experiences = [
-        {
+       {
             title: "AI/ML Intern",
-            company: "CTTC , Bhubaneswar",
-            period: "May 2025 - Present",
+            company: "CTTC, Bhubaneswar",
+            period: "May 2025 - July 2025",
             details: [
-                "Currently undergoing training and project work in Artificial Intelligence and Machine Learning.",
-                "Learning key ML concepts, Python libraries, and real-world model implementation.",
-                "Working on data preprocessing, model training, and performance evaluation.",
+                "Completed hands-on training and project work in Artificial Intelligence and Machine Learning.",
+                "Gained proficiency in Python libraries and applied key ML concepts to real-world problems.",
+                "Executed data preprocessing, model training, and performance evaluation for projects.",
+                "Enhanced skills in developing, testing, and optimizing ML models in practical scenarios."
             ],
-            pic: '',
+            pic: aimlcttc,
         },
+
         {
             title: "Frontend Developer Intern",
             company: "3SKill",
